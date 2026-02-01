@@ -7,7 +7,13 @@ export default {
 <script setup lang="ts"></script>
 
 <template>
-  <div id="layout">layout</div>
+  <div id="layout">
+    <RouterView></RouterView>
+  </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+#layout {
+  height: 100%;
+}
+</style>

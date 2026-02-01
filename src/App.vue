@@ -1,9 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Layout from './views/layout/layout.vue'
+</script>
 
 <template>
   <div id="app">
-    <RouterView></RouterView>
+    <Layout></Layout>
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+#app {
+  height: 100%;
+}
+</style>
