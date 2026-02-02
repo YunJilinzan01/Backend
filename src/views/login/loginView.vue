@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
+// 获取路由实例
+const router = useRouter()
+
+// 定义表单数据的组合式函数
 const useFormDate = () => {
   const username = ref('')
   const password = ref('')
@@ -11,6 +16,10 @@ const useFormDate = () => {
   }
 }
 const { username, password } = useFormDate()
+
+const navigateToIndex = () => {
+  router.push({ name: 'index' })
+}
 </script>
 
 <template>
@@ -20,7 +29,7 @@ const { username, password } = useFormDate()
         <h2>欢迎登录</h2>
         <p>请输入您的账号和密码进行登录。</p>
       </div>
-      <el-form class="form">
+      <el-form class="form" @submit.prevent="navigateToIndex">
         <el-form-item prop="username">
           <div>用户名</div>
           <el-input v-model="username" placeholder="请输入账号"
@@ -30,7 +39,9 @@ const { username, password } = useFormDate()
           <el-input v-model="password" placeholder="请输入密码" type="password" show-password />
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" style="width: 100%" class="button" size="large">登录</el-button>
+          <el-button type="primary" native-type="submit" class="button" size="large"
+            >登录</el-button
+          >
         </el-form-item>
       </el-form>
     </div>
