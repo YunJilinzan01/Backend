@@ -7,6 +7,7 @@ import MenuItem from '@/components/menu/menuItem.vue'
     <div class="container">
       <el-header class="header">
         <h3>审核后台</h3>
+        <div class="avatar"><el-avatar :size="35" /></div>
       </el-header>
       <el-container class="main">
         <el-aside width="255px">
@@ -32,6 +33,7 @@ import MenuItem from '@/components/menu/menuItem.vue'
     height: 100%;
     .header {
       display: flex;
+      justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       margin-bottom: 10px;
