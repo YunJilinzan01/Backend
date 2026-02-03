@@ -13,7 +13,9 @@ import MenuItem from '@/components/menu/menuItem.vue'
           <MenuItem style="width: 255px; height: 100%"></MenuItem>
         </el-aside>
         <el-container class="controller">
-          <el-main>Main</el-main>
+          <el-main>
+            <RouterView></RouterView>
+          </el-main>
           <el-footer>Footer</el-footer>
         </el-container>
       </el-container>

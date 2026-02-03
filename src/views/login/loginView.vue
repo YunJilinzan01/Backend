@@ -9,17 +9,19 @@ const router = useRouter()
 const useFormDate = () => {
   const username = ref('')
   const password = ref('')
-
+  // const id = '001' // 假设登录成功后获取的用户ID
+  const navigateToIndex = () => {
+    router.push({
+      name: 'index',
+    })
+  }
   return {
     username,
     password,
+    navigateToIndex,
   }
 }
-const { username, password } = useFormDate()
-
-const navigateToIndex = () => {
-  router.push({ name: 'index' })
-}
+const { username, password, navigateToIndex } = useFormDate()
 </script>
 
 <template>
