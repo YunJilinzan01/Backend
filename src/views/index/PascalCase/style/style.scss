@@ -1,0 +1,50 @@
+#pascal-case {
+  padding: 0 20px;
+  width: 100%;
+  height: 100%;
+  background: white; // 稍微带点灰，能衬托出白色卡片的阴影
+  box-sizing: border-box;
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; // 【关键】统一各行之间的间距
+
+    .card {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px; // 统计卡片之间的间距
+      width: 100%;
+    }
+
+    $card-shadow:
+      0px 6px 16px rgba(0, 0, 0, 0.06),
+      0px 0px 1px rgba(0, 0, 0, 0.1);
+    $card-radius: 12px;
+
+    .data-list {
+      display: flex;
+      justify-content: space-between;
+      gap: 23px; // 两个图表卡片之间的间距，建议与上面的 gap 一致
+      width: 100%;
+      height: 452px;
+
+      .category {
+        background: #ffffff;
+        border-radius: $card-radius;
+        box-shadow: $card-shadow;
+        border: 1px solid #f0f0f0;
+      }
+
+      .audit-pass-rate {
+        flex: 1; // 占据 25% 左右
+        height: 100%;
+        background: #ffffff;
+        border-radius: $card-radius;
+        box-shadow: $card-shadow;
+        border: 1px solid #f0f0f0;
+      }
+    }
+  }
+}

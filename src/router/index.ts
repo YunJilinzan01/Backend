@@ -15,14 +15,35 @@ const router = createRouter({
     {
       path: '/index',
       name: 'index',
+      redirect: '/index/pascalCase',
       component: () => import('@/views/index/indexView.vue'),
       //权限没有登录不能访问
       meta: {
         requiresAuth: true,
       },
-      children: [],
+      children: [
+        {
+          path: 'pascalCase',
+          name: 'pascalCase',
+          component: () => import('@/views/index/PascalCase/PascalCase.vue'),
+        },
+        {
+          path: 'userManagement',
+          name: 'userManagement',
+          component: () => import('@/views/index/UserManagement/UserManagement.vue'),
+        },
+      ],
     },
   ],
 })
+
+// router.beforeEach((to) => {
+//   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth)
+//   const isAuthenticated = !!localStorage.getItem('token')
+
+//   if (requiresAuth && !isAuthenticated) {
+//     return { path: '/login' }
+//   }
+// })
 
 export default router

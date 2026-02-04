@@ -7,13 +7,16 @@ import MenuItem from '@/components/menu/menuItem.vue'
     <div class="container">
       <el-header class="header">
         <h3>审核后台</h3>
+        <div class="avatar"><el-avatar :size="35" /></div>
       </el-header>
       <el-container class="main">
         <el-aside width="255px">
           <MenuItem style="width: 255px; height: 100%"></MenuItem>
         </el-aside>
         <el-container class="controller">
-          <el-main>Main</el-main>
+          <el-main>
+            <RouterView></RouterView>
+          </el-main>
           <el-footer>Footer</el-footer>
         </el-container>
       </el-container>
@@ -30,6 +33,7 @@ import MenuItem from '@/components/menu/menuItem.vue'
     height: 100%;
     .header {
       display: flex;
+      justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       margin-bottom: 10px;
@@ -40,6 +44,7 @@ import MenuItem from '@/components/menu/menuItem.vue'
       gap: 10px;
 
       .controller {
+        padding: 0 20px;
         flex: 1;
         margin-left: 30px;
       }
