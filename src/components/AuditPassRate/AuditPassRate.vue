@@ -17,7 +17,7 @@ onMounted(() => {
     title: {
       text: '审核通过率',
       left: '20',
-      top: '15',
+      top: '20',
       textStyle: {
         fontSize: 18,
         fontWeight: 'bold',
@@ -107,7 +107,7 @@ onUnmounted(() => {
 
 <style scoped lang="scss">
 #AuditPassRate {
-  width: 100%;
+  width: 24.9vw;
   height: 100%; // 确保父容器（.data-list）有高度，如 452px
   background: #ffffff;
   border-radius: 12px;

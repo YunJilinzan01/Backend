@@ -46,7 +46,7 @@ onMounted(() => {
     title: {
       text: '帖子发布趋势',
       left: '20',
-      top: '10',
+      top: '20',
       textStyle: {
         fontSize: 18,
         fontWeight: 'bold',
@@ -151,8 +151,8 @@ onUnmounted(() => {
 
 <style scoped lang="scss">
 .category-wrapper {
-  width: 100%;
-  height: 100%;
+  width: 49vw;
+  height: 452px;
   background: #ffffff;
   border-radius: 8px;
   .category-chart {
