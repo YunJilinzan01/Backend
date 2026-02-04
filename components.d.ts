@@ -11,7 +11,9 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AuditPassRate: typeof import('./src/components/AuditPassRate/AuditPassRate.vue')['default']
     CardItem: typeof import('./src/components/card/cardItem.vue')['default']
+    CategoryItem: typeof import('./src/components/category/categoryItem.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElButton: typeof import('element-plus/es')['ElButton']

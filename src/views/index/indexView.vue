@@ -44,6 +44,7 @@ import MenuItem from '@/components/menu/menuItem.vue'
       gap: 10px;
 
       .controller {
+        padding: 0 20px;
         flex: 1;
         margin-left: 30px;
       }

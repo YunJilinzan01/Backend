@@ -28,7 +28,6 @@
     cursor: pointer;
     border-radius: 10px;
     background: white;
-
     &:hover {
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     }
