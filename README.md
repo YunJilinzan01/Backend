@@ -1,4 +1,3 @@
-````markdown
 # 项目文档
 
 ## 项目概述
@@ -25,7 +24,6 @@
 ```bash
 npm install
 ```
-````
 
 常用脚本（在 `package.json` 中）：
 
