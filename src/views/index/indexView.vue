@@ -14,10 +14,9 @@ import MenuItem from '@/components/menu/menuItem.vue'
           <MenuItem style="width: 255px; height: 100%"></MenuItem>
         </el-aside>
         <el-container class="controller">
-          <el-main>
+          <el-main class="content">
             <RouterView></RouterView>
           </el-main>
-          <el-footer>Footer</el-footer>
         </el-container>
       </el-container>
     </div>
@@ -40,9 +39,7 @@ import MenuItem from '@/components/menu/menuItem.vue'
     }
     .main {
       width: 100%;
-      height: 100%;
       gap: 10px;
-
       .controller {
         padding: 0 20px;
         flex: 1;

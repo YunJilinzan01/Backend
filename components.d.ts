@@ -34,5 +34,6 @@ declare module 'vue' {
     MenuItem: typeof import('./src/components/menu/menuItem.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ViewTableChart: typeof import('./src/components/ViewTableChart/ViewTableChart.vue')['default']
   }
 }

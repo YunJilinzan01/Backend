@@ -21,16 +21,36 @@ import { Location, User } from '@element-plus/icons-vue'
 
 <style scoped lang="scss">
 #menu {
-  width: 255px; // 默认展开宽度
+  width: 255px;
+  height: 100%; // 确保占满父级高度
   box-sizing: border-box;
+
   .asied {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+    background-color: #ffffff; // 这里的颜色要和布局里的 aside-wrapper 一致
   }
 }
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 255px;
-  height: 100%;
+
+.el-menu-vertical-demo {
+  // border-right: none !important; // 必须去掉，否则滚动时会有断开的黑线
+  background-color: transparent !important; // 背景透明，交给父级容器控制
+
+  &:not(.el-menu--collapse) {
+    width: 255px;
+    /* 不要在这里设置固定的 100% height，否则会限制伸缩 */
+    min-height: 100%;
+  }
+}
+
+// 统一菜单项的高度和样式
+:deep(.el-menu-item) {
+  height: 56px;
+  line-height: 56px;
+
+  &.is-active {
+    background-color: #f0f7ff; // 激活时的背景色
+  }
 }
 </style>
