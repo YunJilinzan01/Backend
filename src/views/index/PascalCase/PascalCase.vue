@@ -2,6 +2,7 @@
 import AuditPassRate from '@/components/AuditPassRate/AuditPassRate.vue'
 import CardItem from '@/components/card/cardItem.vue'
 import CategoryItem from '@/components/category/categoryItem.vue'
+import TableView from '@/components/TableView/tableView.vue';
 import ViewTableChart from '@/components/ViewTableChart/ViewTableChart.vue'
 </script>
 
@@ -19,6 +20,9 @@ import ViewTableChart from '@/components/ViewTableChart/ViewTableChart.vue'
       </div>
       <div class="view-data">
         <ViewTableChart></ViewTableChart>
+      </div>
+      <div class="table-view">
+        <TableView></TableView>
       </div>
     </div>
   </div>
