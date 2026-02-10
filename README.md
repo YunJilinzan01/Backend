@@ -38,24 +38,33 @@ npm install
 ## 项目结构（重要文件说明）
 
 - `index.html`：Vite 入口页面
-- `vite.config.ts`：Vite 配置（自动导入、ElementPlus 组件解析、别名 `@` 指向 `src`）
-- `tsconfig.*.json`：TypeScript 配置
-- `src/main.ts`：应用入口，挂载 Pinia 与 Router
+- `vite.config.ts`：Vite 配置（含 `unplugin-auto-import` 与 `unplugin-vue-components`，Element Plus 解析器，别名 `@` 指向 `src`）
+- `tsconfig.*.json`：TypeScript 配置（包含 `tsconfig.node.json`、`tsconfig.app.json`）
+- `src/main.ts`：应用入口，创建 App、挂载 Pinia 与 Router，导入全局样式
 - `src/App.vue`：根组件，渲染 `Layout`
-- `src/router/index.ts`：路由配置，包含 `/login` 与 `/index`（带子路由）
+- `src/router/index.ts`：路由配置，包含 `/login` 与 `/index`（子路由包括 `pascalCase`、`userManagement`、`details/:id`，可使用 `meta.requiresAuth` 作鉴权）
 - `src/stores/`：Pinia 状态管理
+  - `counter.ts`：示例计数 store
   - `userInfo/userInfo.ts`：存储用户信息（`userId`, `username`, `password`）
+- `src/type/`：TypeScript 类型定义
+  - `TableDateType/dataType.ts`：表格数据类型接口
+  - `UserManagementType/UserManagementType.ts`：用户管理类型接口
+  - `DrawerType/drawerType.ts`：抽屉表单数据类型接口
 - `src/views/`：页面视图
   - `login/loginView.vue`：登录页面（提交后跳转到 `index`）
   - `index/indexView.vue`：主应用布局页面，包含侧边栏与内容区
-  - `index/PascalCase/PascalCase.vue`：仪表盘示例，包含多个卡片与图表组件
-  - `index/UserManagement/UserManagement.vue`：用户管理页面（占位）
+  - `index/PascalCase/PascalCase.vue`：仪表盘示例，包含卡片、图表与数据视图组件（`ViewTableChart`、`TableView`）
+  - `index/UserManagement/UserManagement.vue`：用户管理页面（含表格与用户抽屉交互）
+  - `index/details/detailsView.vue`：详情页（通过路由参数 `id` 显示内容）
   - `layout/layout.vue`：布局外壳，渲染路由视图
 - `src/components/`：可复用组件
   - `AuditPassRate/AuditPassRate.vue`：使用 ECharts 绘制审核通过率的横向堆叠柱状图
   - `category/categoryItem.vue`：使用 ECharts 绘制折线（趋势图）
-  - `card/cardItem.vue`：信息卡片组件（metric 卡）
+  - `card/cardItem.vue`：信息卡片组件（支持 `title/content/footer` 插槽）
   - `menu/menuItem.vue`：侧边导航，使用 Element Plus 菜单与图标
+  - `ViewTableChart/ViewTableChart.vue`：饼图 + 数据卡片组合展示
+  - `TableView/tableView.vue`：待审核帖子表格（查看详情 / 通过 / 驳回）
+  - `UserDrawer/UserDrawer.vue`：用户新增/编辑抽屉组件，配套 `UserDrawer/Service/DrawerService.ts`
 - `src/assets/css/base.css`：基础样式（html/body/#app 高度与 margin 清理）
 - `public/`：静态资源（如 `favicon.ico`）
 

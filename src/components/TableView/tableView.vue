@@ -53,7 +53,7 @@ const useTableFunction = () => {
   }
 
   const details = (index: TableDateType["id"]) => {
-    router.push(`/details/${index}`) // 假设详情页的路由是 /details/:id
+    router.push({ name: 'details', params: { id: index } })
   }
   return {
     tableData,

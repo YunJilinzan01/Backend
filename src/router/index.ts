@@ -31,7 +31,16 @@ const router = createRouter({
           path: 'userManagement',
           name: 'userManagement',
           component: () => import('@/views/index/UserManagement/UserManagement.vue'),
+          meta: {
+            requiresAuth: true //需要特殊权限才能访问
+          }
         },
+        {
+          path: "details/:id",
+          name: "details",
+          component: () => import('@/views/index/details/detailsView.vue'),
+        }
+
       ],
     },
   ],
