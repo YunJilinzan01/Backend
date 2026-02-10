@@ -11,7 +11,8 @@ import MenuItem from '@/components/menu/menuItem.vue'
       </el-header>
       <el-container class="main">
         <el-aside width="255px">
-          <MenuItem style="width: 255px; height: 100%"></MenuItem>
+          <MenuItem style="width: 255px; height: 100%">
+          </MenuItem>
         </el-aside>
         <el-container class="controller">
           <el-main class="content">
@@ -26,24 +27,31 @@ import MenuItem from '@/components/menu/menuItem.vue'
 <style scoped lang="scss">
 #index {
   width: 100%;
-  height: 100%;
+  height: 100%; // 确保最外层占满屏幕高度
+
   .container {
     width: 100%;
     height: 100%;
+    display: flex; // 开启 flex
+    flex-direction: column; // 纵向排列 header 和 main
+
     .header {
       display: flex;
       justify-content: space-between;
+      flex-shrink: 0; // 确保 header 不会被压缩
       align-items: center;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       margin-bottom: 10px;
+      height: 60px; // 建议给 header 固定高度
     }
+
     .main {
       width: 100%;
       gap: 10px;
+
       .controller {
         padding: 0 20px;
-        flex: 1;
-        margin-left: 30px;
+        overflow-y: auto; // 只有内容区允许纵向滚动
       }
     }
   }
