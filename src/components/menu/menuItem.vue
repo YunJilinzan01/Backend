@@ -5,13 +5,17 @@ import { Location, User } from '@element-plus/icons-vue'
 <template>
   <div id="menu">
     <div class="asied">
-      <el-menu default-active="pascalCase" class="el-menu-vertical-demo" router>
-        <el-menu-item index="pascalCase">
-          <el-icon><location /></el-icon>
+      <el-menu default-active="/index/pascalCase" class="el-menu-vertical-demo" router>
+        <el-menu-item index="/index/pascalCase">
+          <el-icon>
+            <location />
+          </el-icon>
           <template #title>仪表盘</template>
         </el-menu-item>
-        <el-menu-item index="userManagement">
-          <el-icon><user /></el-icon>
+        <el-menu-item index="/index/userManagement">
+          <el-icon>
+            <user />
+          </el-icon>
           <template #title>用户管理</template>
         </el-menu-item>
       </el-menu>

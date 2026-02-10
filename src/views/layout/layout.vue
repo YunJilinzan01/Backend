@@ -14,6 +14,7 @@ export default {
 
 <style scoped lang="scss">
 #layout {
+  width: 100%;
   height: 100%;
 }
 </style>
