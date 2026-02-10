@@ -46,6 +46,10 @@ npm install
 - `src/stores/`：Pinia 状态管理
   - `counter.ts`：示例计数 store
   - `userInfo/userInfo.ts`：存储用户信息（`userId`, `username`, `password`）
+- `src/type/`：TypeScript 类型定义
+  - `TableDateType/dataType.ts`：表格数据类型接口
+  - `UserManagementType/UserManagementType.ts`：用户管理类型接口
+  - `DrawerType/drawerType.ts`：抽屉表单数据类型接口
 - `src/views/`：页面视图
   - `login/loginView.vue`：登录页面（提交后跳转到 `index`）
   - `index/indexView.vue`：主应用布局页面，包含侧边栏与内容区
